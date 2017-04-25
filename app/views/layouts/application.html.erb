@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alias</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href="https://fonts.googleapis.com/css?family=Anton|Exo|Francois+One" rel="stylesheet">
+  <%= csrf_meta_tags %>
+  <style type="text/css">
+  body{
+  	background-color: #f8f593;
+  	text-align: center;
+  }
+  .header{
+  	font-size: 4em;
+  	color: #fff;
+  	font-family: 'Francois One', sans-serif;
+  	text-shadow: 2px 2px #000000;
+  }
+  #time{
+  	font-size: 2em;
+  	font-family: 'Exo', sans-serif;
+  }
+  .btn{
+
+  }
+
+  </style>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
