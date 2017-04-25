@@ -3,7 +3,6 @@
 <head>
   <title>Alias</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <link href="https://fonts.googleapis.com/css?family=Anton|Exo|Francois+One" rel="stylesheet">
   <%= csrf_meta_tags %>
   <style type="text/css">
@@ -21,15 +20,12 @@
   	font-size: 2em;
   	font-family: 'Exo', sans-serif;
   }
-  .btn{
-
-  }
 
   </style>
 </head>
 <body>
 
 <%= yield %>
-
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

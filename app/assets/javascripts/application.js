@@ -15,18 +15,26 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-var time = 0;
-var myVar = setInterval(myTimer, 1000);
+var time;
+var myVar;
 //var myVar = interval(myTimer, 1000, 100);
-var team = 2;
+var team = 1;
 var points = {"1":0, "2":0};
 var word;
+start();
 
-
+function start(){
+	var div = document.getElementById("new");
+	if (div.hasChildNodes()){
+	div.removeChild(document.getElementById("start"));}
+	time = 10;
+	myVar = setInterval(myTimer, 1000);
+	word=getWord();
+}
 
 function myTimer() {
-	document.getElementById("points").innerHTML = points[team.toString()].toString();
-	document.getElementById("team").innerHTML = 'Team '+team.toString();
+	document.getElementById("points").innerHTML = 'Team 1: '+ points["1"].toString()+'<br/>Team 2: '+ points["2"].toString();
+	document.getElementById("team").innerHTML = 'Team '+team.toString()+'`s turn.';
     document.getElementById("time").innerHTML = time.toString();
     document.getElementById("word").innerHTML = word;
     
@@ -35,9 +43,11 @@ function myTimer() {
     
     if(time<=0){
     	team = changeTeam(team);
-    	time = 30;
     	//list.replaceChild(getWords(),list.childNodes[0])
     	word = getWord();
+    	document.getElementById("new").innerHTML = '<button id="start" class="btn" onclick="start()">Next team</button>';
+    	clearInterval(myVar);
+
     }
     time-=1;
 
