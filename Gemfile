@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # scheduler
 gem 'rufus-scheduler'
-#Assets 
+#Assets
 source 'http://insecure.rails-assets.org' do
   gem 'rails-assets-bootstrap'
 end
